@@ -3,5 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lavender">#8692f7</color>
+    <color name="special">#545761</color>
+    <color name="hintspecial">#8F9094</color>
+    <color name="savecolor">#08FF08</color>
+
+
+
+
 
 </resources>
