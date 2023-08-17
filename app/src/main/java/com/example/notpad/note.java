@@ -1,12 +1,12 @@
 package com.example.notpad;
 
 public class note {
-    String name;
+    String title;
     int id;
 
 
-    public note(String name, int id) {
-        this.name = name;
+    public note(String title, int id) {
+        this.title = title;
         this.id = id;
     }
 }

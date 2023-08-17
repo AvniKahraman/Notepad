@@ -31,13 +31,13 @@
 
     <Button
         android:layout_width="wrap_content"
+        android:id="@+id/save"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Save"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="25dp"
         android:textSize="15dp"
-        android:id="@+id/save"
         />
 
 </RelativeLayout>
