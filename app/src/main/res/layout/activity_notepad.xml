@@ -24,6 +24,7 @@
         android:hint="Start Typing"
         android:textColorHint="@color/hintspecial"
         android:id="@+id/type"
+        android:textColor="@color/white"
         android:gravity="top|start"
         android:textSize="17dp"
         android:paddingLeft="15dp"/>

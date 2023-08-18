@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.notpad.databinding.RecycleRowBinding;
+import com.example.notpad.databinding.ActivityRecyclerowBinding;
 
 import java.util.ArrayList;
 
@@ -22,10 +22,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
     @NonNull
     @Override
     public NoteHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        RecycleRowBinding recycleRowBinding = RecycleRowBinding
+        ActivityRecyclerowBinding binding = ActivityRecyclerowBinding
                 .inflate(LayoutInflater.from(parent.getContext()), parent, false);
 
-        return new NoteHolder(recycleRowBinding);
+        return new NoteHolder(binding);
     }
 
     @Override
@@ -51,9 +51,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
     }
 
     public class NoteHolder extends RecyclerView.ViewHolder {
-        private RecycleRowBinding binding;
+        private ActivityRecyclerowBinding binding;
 
-        public NoteHolder(RecycleRowBinding binding) {
+        public NoteHolder(ActivityRecyclerowBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
