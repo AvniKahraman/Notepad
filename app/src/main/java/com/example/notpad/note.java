@@ -8,5 +8,6 @@ public class note {
     public note(String title, int id) {
         this.title = title;
         this.id = id;
+
     }
 }

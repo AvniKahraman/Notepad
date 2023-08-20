@@ -1,7 +1,9 @@
 package com.example.notpad;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -47,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         getData();
     }
 
@@ -72,4 +77,46 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    public void onBindViewHolder(@NonNull NoteAdapter.NoteHolder holder, int position) {
+        holder.binding.avni.setText(noteArrayList.get(position).title);
+
+        holder.binding.avni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Burada tıklama işlemini gerçekleştirin
+                int clickedPosition = holder.getAdapterPosition();
+                if (clickedPosition != RecyclerView.NO_POSITION) {
+                    Intent intent = new Intent(holder.itemView.getContext(), Notepad.class);
+                    intent.putExtra("info", "old");
+                    intent.putExtra("noteId", noteArrayList.get(clickedPosition).id);
+                    holder.itemView.getContext().startActivity(intent);
+                }
+            }
+        });
+
+        // Uzun tıklamaya tepki veren bir OnLongClickListener ekleyin
+        holder.binding.avni.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // Silme işlemi burada gerçekleştirilebilir
+                deleteNoteFromDatabase(noteArrayList.get(position).id);
+                return true;
+            }
+        });
+    }
+
+    private void deleteNoteFromDatabase(int noteId) {
+        // SQLite veritabanından notu silme işlemini gerçekleştirin
+        try {
+            SQLiteDatabase database = this.openOrCreateDatabase("Note", MODE_PRIVATE, null);
+            database.execSQL("DELETE FROM note WHERE id = ?", new Object[]{noteId});
+            // Veriyi güncelledikten sonra listeyi yeniden yükleyebilirsiniz: getData();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+// ...
+
 }

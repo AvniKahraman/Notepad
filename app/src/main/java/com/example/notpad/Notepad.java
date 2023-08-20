@@ -47,7 +47,7 @@ public class Notepad extends AppCompatActivity {
             int noteId = intent.getIntExtra("noteId", 0);
             loadNoteData(noteId);
         }
-
+/////////////////////////////////////////////////////////////
         binding.title.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {

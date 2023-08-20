@@ -30,7 +30,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull NoteHolder holder, int position) {
-        holder.binding.recylerViewTextView.setText(noteArrayList.get(position).title);
+        holder.binding.avni.setText(noteArrayList.get(position).title);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +51,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
     }
 
     public class NoteHolder extends RecyclerView.ViewHolder {
-        private ActivityRecyclerowBinding binding;
+        ActivityRecyclerowBinding binding;
 
         public NoteHolder(ActivityRecyclerowBinding binding) {
             super(binding.getRoot());
