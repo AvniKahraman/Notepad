@@ -1,6 +1,5 @@
 package com.example.notpad;
 
-import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,11 +47,10 @@ public class Notepad extends AppCompatActivity {
             loadNoteData(noteId);
         }
 /////////////////////////////////////////////////////////////
-        binding.title.setOnLongClickListener(new View.OnLongClickListener() {
+        binding.delete.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
+            public void onClick(View v) {
                 showDeleteConfirmationDialog();
-                return true;
             }
         });
     }
