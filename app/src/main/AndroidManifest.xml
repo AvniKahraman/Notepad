@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Notpad"
         tools:targetApi="31">
         <activity
-            android:name=".recyclerrow"
+            android:name=".recyclerview"
             android:exported="false" />
         <activity
             android:name=".Notepad"
